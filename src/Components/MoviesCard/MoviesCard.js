@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 const MoviesCard = ({movie}) => {
     const history = useHistory();

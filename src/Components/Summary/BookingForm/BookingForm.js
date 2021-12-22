@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 const customStyles = {
@@ -17,16 +17,15 @@ const customStyles = {
 const BookingForm = ({SummaryDetails, modalIsOpen, closeModal}) => {
 
     const {name} =SummaryDetails;
-    const { register, handleSubmit,  formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const addToLocalstorage = localStorage.setItem("user booking info",data)
-        console.log(data)
+        console.log(data, addToLocalstorage)
         closeModal();
     };
   
     return (
         <div>
-             {/* <button onClick={openModal}>Open Modal</button> */}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
